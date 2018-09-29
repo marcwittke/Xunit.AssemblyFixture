@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarcWittke.Xunit.AssemblyFixture", "src\MarcWittke.Xunit.AssemblyFixture\MarcWittke.Xunit.AssemblyFixture.csproj", "{A260B876-E5AC-45C7-A16B-92D9152DC9E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcWittke.Xunit.AssemblyFixture", "src\MarcWittke.Xunit.AssemblyFixture\MarcWittke.Xunit.AssemblyFixture.csproj", "{A260B876-E5AC-45C7-A16B-92D9152DC9E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3AD5BE63-E287-4AC6-A2B7-4A58687F5AD4}"
+	ProjectSection(SolutionItems) = preProject
+		license.txt = license.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{08C7A5EB-8DF8-4790-B0E1-11A1A9129207}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{64A44248-ED6F-4461-9B4E-75766F858778}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarcWittke.Xunit.AssemblyFixture.Tests", "tests\MarcWittke.Xunit.AssemblyFixture.Tests\MarcWittke.Xunit.AssemblyFixture.Tests.csproj", "{CA3661D5-1214-4DB8-8946-2A526383A5BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +26,17 @@ Global
 		{A260B876-E5AC-45C7-A16B-92D9152DC9E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A260B876-E5AC-45C7-A16B-92D9152DC9E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A260B876-E5AC-45C7-A16B-92D9152DC9E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA3661D5-1214-4DB8-8946-2A526383A5BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA3661D5-1214-4DB8-8946-2A526383A5BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA3661D5-1214-4DB8-8946-2A526383A5BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA3661D5-1214-4DB8-8946-2A526383A5BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A260B876-E5AC-45C7-A16B-92D9152DC9E2} = {08C7A5EB-8DF8-4790-B0E1-11A1A9129207}
+		{CA3661D5-1214-4DB8-8946-2A526383A5BE} = {64A44248-ED6F-4461-9B4E-75766F858778}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EBD1746E-FB31-461C-9043-AD9FED7A1A55}

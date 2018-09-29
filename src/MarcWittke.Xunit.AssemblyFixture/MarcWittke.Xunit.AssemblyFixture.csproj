@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
+    <Version>0.0.0</Version>
+    <Authors>Marc Wittke</Authors>
+    <Company>anic GmbH</Company>
+    <Product>XUnit Extensions</Product>
+    <Description>Provides an AssembyFixture attribute for xunit. Straight copied from https://github.com/xunit/samples.xunit/tree/master/AssemblyFixtureExample</Description>
+    <Copyright>.NET Foundation and Contributors</Copyright>
+    <PackageLicenseUrl>https://github.com/marcwittke/Xunit.AssemblyFixture/blob/master/license.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/marcwittke/Xunit.AssemblyFixture/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/marcwittke/Xunit.AssemblyFixture.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>xunit assemblyfixture</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
