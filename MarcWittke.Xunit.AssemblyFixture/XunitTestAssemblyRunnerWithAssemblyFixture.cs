@@ -11,7 +11,7 @@ namespace MarcWittke.Xunit.AssemblyFixture
 {
     public class XunitTestAssemblyRunnerWithAssemblyFixture : XunitTestAssemblyRunner
     {
-        readonly Dictionary<Type, object> assemblyFixtureMappings = new Dictionary<Type, object>();
+        readonly Dictionary<Type, object> _assemblyFixtureMappings = new Dictionary<Type, object>();
 
         public XunitTestAssemblyRunnerWithAssemblyFixture(ITestAssembly testAssembly,
             IEnumerable<IXunitTestCase> testCases,
@@ -36,14 +36,14 @@ namespace MarcWittke.Xunit.AssemblyFixture
 
                 // Instantiate all the fixtures
                 foreach (var fixtureAttr in fixturesAttrs)
-                    assemblyFixtureMappings[fixtureAttr.FixtureType] = Activator.CreateInstance(fixtureAttr.FixtureType);
+                    _assemblyFixtureMappings[fixtureAttr.FixtureType] = Activator.CreateInstance(fixtureAttr.FixtureType);
             });
         }
 
         protected override Task BeforeTestAssemblyFinishedAsync()
         {
             // Make sure we clean up everybody who is disposable, and use Aggregator.Run to isolate Dispose failures
-            foreach (var disposable in assemblyFixtureMappings.Values.OfType<IDisposable>())
+            foreach (var disposable in _assemblyFixtureMappings.Values.OfType<IDisposable>())
                 Aggregator.Run(disposable.Dispose);
 
             return base.BeforeTestAssemblyFinishedAsync();
@@ -53,6 +53,6 @@ namespace MarcWittke.Xunit.AssemblyFixture
             ITestCollection testCollection,
             IEnumerable<IXunitTestCase> testCases,
             CancellationTokenSource cancellationTokenSource)
-            => new XunitTestCollectionRunnerWithAssemblyFixture(assemblyFixtureMappings, testCollection, testCases, DiagnosticMessageSink, messageBus, TestCaseOrderer, new ExceptionAggregator(Aggregator), cancellationTokenSource).RunAsync();
+            => new XunitTestCollectionRunnerWithAssemblyFixture(_assemblyFixtureMappings, testCollection, testCases, DiagnosticMessageSink, messageBus, TestCaseOrderer, new ExceptionAggregator(Aggregator), cancellationTokenSource).RunAsync();
     }
 }
